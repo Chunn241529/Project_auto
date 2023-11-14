@@ -3,15 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Tool.Edit_Flags">
+      <class name="Tool.Toolcreate">
         <methods>
           <include name="setUp"/>
-          <include name="destroy"/>
           <include name="init"/>
-          <include name="teadDown"/>
-          <include name="multiLogin" invocation-numbers="0 128 3 4 133 6 7 8 9 10 11 14 16 17 19 21 22 24 25 26 27 29 32 33 34 35 36 39 43 46 47 48 49 50 55 56 58 59 60 61 62 63 64 65 67 68 70 71 72 74 75 77 78 80 82 83 84 85 86 87 88 91 92 95 96 98 99 100 102 103 105 106 108 109 112 113 114 115 119 122 123 124 126 127"/>
+          <include name="Multi_Create"/>
         </methods>
-      </class> <!-- Tool.Edit_Flags -->
+      </class> <!-- Tool.Toolcreate -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

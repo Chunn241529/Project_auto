@@ -102,5 +102,12 @@
 	<classpathentry kind="lib" path="D:/trung/Learn/jar_files/SparseBitSet-1.2.jar"/>
 	<classpathentry kind="lib" path="D:/trung/Learn/jar_files/xmlbeans-5.1.1.jar"/>
 	<classpathentry kind="lib" path="D:/Eclipse/eclipse/OnlineEntertaiment/ThuVien/poi-5.1.0.jar"/>
+	<classpathentry kind="lib" path="D:/trung/Learn/Project_Java/Project_AutoTest/jar_files/json-path-5.3.0.jar"/>
+	<classpathentry kind="lib" path="D:/trung/Learn/Project_Java/Project_AutoTest/jar_files/rest-assured-5.3.0.jar"/>
+	<classpathentry kind="lib" path="D:/trung/Learn/Project_Java/Project_AutoTest/jar_files/commons-lang3-3.11.jar"/>
+	<classpathentry kind="lib" path="D:/trung/Learn/Project_Java/Project_AutoTest/jar_files/groovy-4.0.11.jar"/>
+	<classpathentry kind="lib" path="D:/trung/Learn/Project_Java/Project_AutoTest/jar_files/groovy-json-4.0.11.jar"/>
+	<classpathentry kind="lib" path="D:/trung/Learn/Project_Java/Project_AutoTest/jar_files/groovy-xml-4.0.11.jar"/>
+	<classpathentry kind="lib" path="D:/trung/Learn/Project_Java/Project_AutoTest/jar_files/tagsoup-1.2.1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
