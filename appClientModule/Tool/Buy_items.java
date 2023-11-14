@@ -19,8 +19,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import TestASM2.Log.LoginData;
-import TestASM2.ultils.ExcelUltils;
+import develop.log.LoginData;
+import develop.ultils.ExcelUltils;
 
 public class Buy_items {
 	private WebDriver driver;

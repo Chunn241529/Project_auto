@@ -14,7 +14,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import TestASM2.ultils.ExcelUltils;
+import develop.ultils.ExcelUltils;
 
 public class GetUsername {
 	private WebDriver driver;
@@ -52,7 +52,7 @@ public class GetUsername {
 
 		login_admin();
 
-		driver.get("https://develop.com.vn/admin/vendor");
+		driver.get("https://develop.com.vn/admin/customer");
 //		WebElement changePage = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[2]/div/div[3]/div[2]/div/ul/li[4]/a"));
 //		changePage.click();
 		

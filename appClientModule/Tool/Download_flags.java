@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
@@ -20,7 +20,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import TestASM2.ultils.ExcelUltils;
+import develop.ultils.ExcelUltils;
 
 public class Download_flags {
 	private WebDriver driver;
@@ -49,7 +49,7 @@ public class Download_flags {
 		ClickBtn.click();
 	}
 
-	private void download_flags() {
+	private void download_flags() throws IOException {
 
 		driver.get("https://develop.com.vn/admin");
 
@@ -83,7 +83,7 @@ public class Download_flags {
 			}
 		}
 
-		for (int i = 191; i < 192; i++) {
+		for (int i = 176; i < listName.size(); i++) {
 
 //			driver.get("https://flagdownload.com/");
 //
@@ -104,9 +104,33 @@ public class Download_flags {
 //				}
 //			}
 //
-//			driver.findElement(By.xpath("/html/body/section/div/div[2]/div[1]/ul/li[1]/div/a[7]")).click();
+//			WebElement downloadFileElement = driver
+//					.findElement(By.xpath("/html/body/section/div/div[2]/div[1]/ul/li[1]/div/a[7]"));
+//
+//			String imageUrl = downloadFileElement.getAttribute("href");
+//			String fileName = listName.get(i) + ".png";
+//			String savePath = "D:\\trung\\Data\\develop\\flag\\flg\\flg\\" + fileName;
+//
+//			try {
+//				URL url = new URL(imageUrl);
+//				try (InputStream in = new BufferedInputStream(url.openStream());
+//						FileOutputStream fileOutputStream = new FileOutputStream(savePath)) {
+//
+//					byte[] buffer = new byte[1024];
+//					int bytesRead;
+//					while ((bytesRead = in.read(buffer, 0, 1024)) != -1) {
+//						fileOutputStream.write(buffer, 0, bytesRead);
+//					}
+//
+//					System.out.println("Ảnh đã được tải và lưu tại: " + savePath);
+//				} catch (IOException e) {
+//					e.printStackTrace();
+//				}
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
 
-			System.out.println(listName.get(i));
+//			System.out.println(listName.get(i) + imageUrl);
 
 			try (FileInputStream fileInputStream = new FileInputStream(
 					"D:\\trung\\Learn\\Project_Java\\Project_AutoTest\\test-resources\\Data\\EDIT_FLAGS.xlsx");
@@ -119,8 +143,8 @@ public class Download_flags {
 
 				// Vòng lặp để ghi dữ liệu từ danh sách vào cột C
 				for (int j = 0; j < listName.size(); j++) {
-					String chuoi = listName.get(j);
-					Row row = sheet.createRow(j + 1); // Hoặc sử dụng sheet.getRow(i) để lấy dòng đã tồn tại
+					String chuoi = listName.get(j) + ".png";
+					XSSFRow row = sheet.createRow(j + 1); // Hoặc sử dụng sheet.getRow(i) để lấy dòng đã tồn tại
 
 					Cell cellA = row.createCell(0); // Cột A (0-based index)
 					cellA.setCellValue(j+8);
@@ -157,7 +181,12 @@ public class Download_flags {
 	@Test
 	public void test1() {
 //		Upload_Flags();
-		download_flags();
+		try {
+			download_flags();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 

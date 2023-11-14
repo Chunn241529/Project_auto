@@ -18,8 +18,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import TestASM2.Log.flags;
-import TestASM2.ultils.ExcelUltils;
+import develop.log.flags;
+import develop.ultils.ExcelUltils;
 
 public class Edit_Flags {
 	private WebDriver driver;
@@ -27,9 +27,7 @@ public class Edit_Flags {
 	private Set<flags> logs;
 	private flags data;
 
-	String App_running = "https://develop.com.vn/add-to-cart/running-apps-mobile--ng-d-ng-di-ng-h-tr-ch-y-b-gia-t-ng-s-c-kho-";
-	String source_taomanguon = "https://develop.com.vn/add-to-cart/millennials---tr-nh-t-o-m-ngu-n-t-y-bi-n-t-i-u";
-	String source_linecounter = "https://develop.com.vn/add-to-cart/source-code-line-counter-m-d-ng-m-ngu-n-nhanh-ch-ng";
+	
 
 	@BeforeClass
 	public void init() throws IOException {
@@ -57,13 +55,17 @@ public class Edit_Flags {
 	}
 
 	@Test(dataProvider = "flags")
-	public void multiLogin(String stt, String username, String password, String country) throws InterruptedException {
+	public void multiLogin(String stt, String username, String password, String country) {
 		processLogin(username, password);
 
 		driver.get("https://develop.com.vn/admin/edit-country/" + stt);
+
 		driver.findElement(By.xpath("//*[@id=\"country_badges\"]"))
-				.sendKeys("D:\\trung\\Data\\develop\\flag\\flg\\Flag_of_" + country + "-512x341.png");
+				.sendKeys("D:\\trung\\Data\\develop\\flag\\flg\\flg\\" + country);
+
 		driver.findElement(By.xpath("//*[@id=\"setting_form\"]/div/div[3]/button[1]")).click();
+
+		System.out.println("Đã edit hình của Quốc gia: " + country);
 
 	}
 
